@@ -25,32 +25,32 @@ const loss = document.createTextNode("You lost...")
 const end = document.createTextNode("Click a button")
 let numOfCompWins = 0
 let numOfUserWins = 0
+let x = ""
 
 function compInput () {
 const option = ["rock", "paper", "scissors"]
 let random = Math.floor(Math.random() * 3)
 return option[random]
 } 
-let x = compInput()
-console.log(x)
 
-function idkname () {
-
+function round () {
 
 rock.addEventListener('click',function() {
+    x = compInput()
+    console.log(x)
     if (x == "rock"){
     paragraph.appendChild(tie)
     container.appendChild(paragraph)}
 
     else if (x == "paper"){
-        numOfCompWins = numOfCompWins + 1
+        numOfCompWins++
     compPoints.textContent = numOfCompWins;
     paragraph.appendChild(loss)
     container.appendChild(paragraph)}
     
 
     else if (x == "scissors"){
-        numOfUserWins = numOfUserWins + 1
+        numOfUserWins++
     userPoints.textContent = numOfUserWins;
     paragraph.appendChild(win)
     container.appendChild(paragraph)}
@@ -58,8 +58,10 @@ rock.addEventListener('click',function() {
 })
 
 paper.addEventListener('click',function() {
+    x = compInput()
+    console.log(x)
     if (x == "rock"){
-    numOfUserWins = numOfUserWins + 1
+    numOfUserWins++
     userPoints.textContent = numOfUserWins;
     paragraph.appendChild(win)
     container.appendChild(paragraph)}
@@ -69,21 +71,23 @@ paper.addEventListener('click',function() {
     container.appendChild(paragraph)}
 
     else if (x == "scissors"){
-        numOfCompWins = numOfCompWins + 1
+        numOfCompWins++
     compPoints.textContent = numOfCompWins;
     paragraph.appendChild(loss)
     container.appendChild(paragraph)}
 })
 
 scissors.addEventListener('click',function() {
+    x = compInput()
+    console.log(x)
     if (x == "rock"){
-        numOfCompWins = numOfCompWins + 1
+        numOfCompWins++
     compPoints.textContent = numOfCompWins;
     paragraph.appendChild(loss)
     container.appendChild(paragraph)}
 
     if (x == "paper"){
-    numOfUserWins = numOfUserWins + 1
+    numOfUserWins++
     userPoints.textContent = numOfUserWins;
     paragraph.appendChild(win)
     container.appendChild(paragraph)}
@@ -91,16 +95,16 @@ scissors.addEventListener('click',function() {
     if (x == "scissors"){
     paragraph.appendChild(tie)
     container.appendChild(paragraph)}
+    
 
 })}
 
 reset.addEventListener("click",function() {
     numOfUserWins=0
     numOfCompWins=0
+    x=""
     paragraph.textContent = "";
-    x = compInput()
-    console.log(x)
-    idkname()
+    round()
 })
 
-idkname()
+round()
