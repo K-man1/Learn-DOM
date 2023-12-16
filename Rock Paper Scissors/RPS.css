@@ -19,7 +19,7 @@
 h1 {
     font-size: 50px;
 }
-#buttons {
+#options {
     margin-top: 20px;
     display: flex;
     gap: 20px;
@@ -41,13 +41,7 @@ button:hover {
 #resetContainer {
     margin-top: 10px;
 }
-#reset {
-    background-color: lightsalmon;
-    padding: 20px;
-    font-size: 28px;
-    width: 140px;
-    height:65px
-}
+
 
 #points {
     
@@ -59,4 +53,25 @@ button:hover {
 
 #scissorsIMG {
     height: 200px;
+}
+
+#my-canvas{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    visibility: hidden;
+    z-index: 2;
+}
+#reset {
+    background-color: lightsalmon;
+    position: relative;
+    padding: 20px;
+    font-size: 28px;
+    width: 140px;
+    height:65px;
+    display: none;
+    cursor: pointer;
+    z-index: 10;
 }
